@@ -56,18 +56,26 @@ int Tree::parent(int index)
 
 int Tree::leftNeighbor(int index)
 {
-	//if parent's parent exists, return parent's parent's left child
+	//if parent exists, return parent's left child
 	if (parent(index) > 0)
 	{
-		int nb = parent(index);
+		//left child is 2i + 1
+		int nb = (2*parent(index) + 1);
+		return nb;
 	}
 	//if doesnt exist return -1
-	return 0;
+	else return -1;
 }
 
 int Tree::rightNeighbor(int index)
 {
-	//if parent's parent exists, return parent's parent's right child
+	//if parent exists, return  parent's right child
+	if (parent(index) > 0)
+	{
+		//right child is 2i + 2
+		int nb = (2 * parent(index) + 1);
+		return nb;
+	}
 	//if doesnt exist return -1
-	return 0;
+	else return 0;
 }
